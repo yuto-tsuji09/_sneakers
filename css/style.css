@@ -1,0 +1,369 @@
+@charset "UTF-8";
+
+html {
+  font-size: 100%;
+}
+
+body {
+  color: #121212;
+  font-size: 0.9rem;
+  line-height: 1.7;
+}
+
+a {
+  color: #121212;
+  text-decoration: none;
+  display: inline-block;
+}
+
+img {
+  max-width: 100%;
+}
+
+li {
+  list-style: none;
+}
+
+/*
+フェード表示させる要素に使用するためのクラス
+*/
+.fadein {
+  opacity: 0;
+  transform: translateY(20px); /*20px>0px*/
+  transition: all 1s;
+}
+
+/*-------------------------------------------
+header
+-------------------------------------------*/
+.header {
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  background-color: #fff;
+  z-index: 10;
+  position: fixed;
+  padding: 20px 40px;
+}
+
+.header-title {
+  line-height: 1px;
+}
+
+.nav {
+  display: block;
+  position: fixed;
+  top: 0;
+  left: -300px;
+  bottom: 0;
+  width: 300px;
+  color: #fff;
+  padding: 60px 25px;
+  background-color: #121212;
+  /* overflow-x: hidden;
+  overflow-y: auto; */ /*必要か質問*/
+  transition: all 0.5s;
+  z-index: 20;
+  opacity: 0;
+}
+
+.nav-menu__link,
+.nav-sns__link {
+  color: #fff;
+}
+
+.open .nav {
+  left: 0;
+  opacity: 1;
+}
+
+.nav-menu {
+  margin-bottom: 60px;
+  border-top: solid 1px #fff;
+}
+
+.nav-menu__item {
+  position: relative;
+  padding: 20px 0;
+  border-bottom: solid 1px #fff;
+}
+
+.nav-sns__item {
+  padding: 5px 0;
+}
+
+.hamburger {
+  display: block;
+  position: absolute;
+  top: 25px;
+  right: 45px;
+  width: 30px;
+  height: 30px;
+  transition: all 0.5s;
+  cursor: pointer;
+  z-index: 20;
+}
+
+.hamburger span {
+  width: 30px;
+  height: 2px;
+  background-color: #333;
+  border-radius: 4px;
+  display: block;
+  position: absolute;
+  left: 0;
+  transition: all 0.5s;
+}
+
+.hamburger span:nth-child(1) {
+  top: 4px;
+}
+
+.hamburger span:nth-child(2) {
+  top: 14px;
+}
+
+.hamburger span:nth-child(3) {
+  top: 24px;
+}
+
+.open .hamburger span {
+  background-color: #fff;
+}
+
+.open .hamburger span:nth-child(1) {
+  transform: translateY(10px) rotate(-315deg);
+}
+
+.open .hamburger span:nth-child(2) {
+  opacity: 0;
+}
+
+.open .hamburger span:nth-child(3) {
+  transform: translateY(-10px) rotate(315deg);
+}
+
+.mask {
+  display: none;
+  transition: 0.5s;
+}
+
+.open .mask {
+  width: 100%;
+  height: 100vh;
+  background-color: #000;
+  cursor: pointer;
+  display: block;
+  opacity: 0.8;
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 10;
+}
+
+/*-------------------------------------------
+Main
+-------------------------------------------*/
+.main {
+  padding-top: 80px;
+}
+
+.section-title {
+  font-size: 2.25rem;
+  margin-bottom: 30px;
+  text-align: center;
+}
+
+/*-------------------------------------------
+Video
+-------------------------------------------*/
+.mv-video {
+  width: 100%;
+  max-height: 960px;
+  object-fit: cover;
+}
+
+/*-------------------------------------------
+Pickup
+-------------------------------------------*/
+#pickup {
+  width: 100%;
+  padding: 98px 0 0 0; /*padding-top 位置調整の為、変更*/
+}
+.slick-area li {
+  padding: 0 30px;
+}
+
+/*-------------------------------------------
+Feature
+-------------------------------------------*/
+#feature {
+  max-width: 1240px;
+  padding: 94px 16px 60px 16px; /*padding-top 位置調整の為、変更*/
+  margin-inline: auto;
+  /* margin: -50px auto 10px;　これ必要？？ */
+}
+
+.feature-list {
+  display: grid;
+  gap: 26px;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  /* grid-template-columns: repeat(auto-fill, minmax(300px, 1fr)); */
+}
+
+.list-card {
+  transition: all 0.3s ease;
+  box-shadow: 0 0 8px 4px #ccc;
+}
+
+.list-card img {
+  vertical-align: top;
+}
+
+.card-content {
+  padding: 30px;
+}
+
+.card-cat {
+  font-size: 0.75rem;
+  margin-bottom: 20px;
+}
+
+.card-text {
+  font-weight: bold;
+  margin-bottom: 20px;
+}
+
+.card-date {
+  font-size: 0.75rem;
+  text-align: right;
+}
+
+/*-------------------------------------------
+Contact
+-------------------------------------------*/
+#contact {
+  color: #fff;
+  background-color: #121212;
+  padding: 50px 16px;
+}
+
+.content {
+  max-width: 1240px;
+  margin-inline: auto;
+  display: flex;
+  justify-content: space-between;
+  padding: 0 16px;
+}
+
+.content-left,
+.content-right {
+  width: 45%;
+}
+
+.content-left p {
+  margin-bottom: 30px;
+}
+
+.form input,
+.form textarea {
+  width: 100%;
+  background-color: #fff;
+  padding: 10px;
+  margin-bottom: 20px;
+}
+
+.button input {
+  width: 200px;
+  color: #fff;
+  background-color: #121212;
+  border: solid 1px #fff;
+  padding: 12px 0;
+  margin-bottom: 0;
+}
+.button input:hover {
+  color: #202020;
+  background-color: #fff;
+}
+
+/*-------------------------------------------
+footer
+-------------------------------------------*/
+.footer {
+  color: #fff;
+  background-color: #121212;
+  text-align: center;
+  padding: 10px;
+  font-size: 0.75rem;
+}
+
+/*-------------------------------------------
+SP
+-------------------------------------------*/
+@media (max-width: 600px) {
+  /*-------------------------------------------
+header
+-------------------------------------------*/
+  .header {
+    padding: 20px 16px;
+  }
+  .hamburger {
+    right: 20px;
+  }
+  /*-------------------------------------------
+Main
+-------------------------------------------*/
+  .section-title {
+    font-size: 1.5rem;
+    margin-bottom: 20px;
+  }
+  /*-------------------------------------------
+  Video
+  -------------------------------------------*/
+  .mv-video {
+    width: 100%;
+    height: 100vh;
+    object-fit: cover;
+  }
+  /*-------------------------------------------
+  Pickup
+  -------------------------------------------*/
+  #pickup {
+    padding: 80px 0;
+  }
+
+  .slick-area li {
+    padding: 0 20px;
+  }
+
+  /*-------------------------------------------
+Feature
+-------------------------------------------*/
+  #feature {
+    padding: 24px 16px 80px 16px; /*padding-top 位置調整の為、変更*/
+  }
+
+  .card-content {
+    padding: 16px;
+  }
+  /*-------------------------------------------
+  Contact
+  -------------------------------------------*/
+  #contact {
+    padding: 80px 16px;
+  }
+
+  .content {
+    flex-direction: column;
+    padding: 0;
+  }
+
+  .content-left,
+  .content-right {
+    width: 100%;
+  }
+
+  .button input {
+    width: 100%;
+  }
+}
